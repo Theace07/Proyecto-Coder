@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Header Desing                               */
+/* -------------------------------------------------------------------------- */
+body {
+    background-color: #D8C4B6 !important;
+}
+
+header {
+    background-image: url(../Images/pexels-ionelceban-2581022.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.nav_links,
+li a {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    color: #F5F5DC;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)
+}
+
+.nav_links {
+    display: flex;
+}
+
+.nav_links li a:hover {
+    color: #F5F5DC;
+}
+
+ul {
+    gap: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Primera seccion                          */
+/* -------------------------------------------------------------------------- */
+h2 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.information {
+    text-align: left;
+}
+
+.grapes-image {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    border: solid 2px;
+    margin-left: 30px;
+}
+
+.First-section {
+    border-bottom: solid 2px;
+}
+.btn-explora {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 12px 32px;
+    background-color: #8B6239;
+    color: #fffbe6;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s;
+}
+
+.btn-explora:hover {
+    background-color: #6d4c2b;
+    color: #fffbe6;
+}
+.pagina-en-desarrollo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(60, 40, 20, 0.85); /* Fondo oscuro semitransparente */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje-desarrollo {
+    background: #fff;
+    padding: 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.mensaje-desarrollo h1 {
+    margin-bottom: 16px;
+    color: #8B6239;
+}
+
+.mensaje-desarrollo p {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Segunda seccion                              */
+/* -------------------------------------------------------------------------- */
+.Second-Section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.information-second-section {
+    max-width: 60ch;
+}
+
+.Section-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.Image-second-section {
+    width: 300px;
+    height: auto;
+    border: solid 2px;
+    margin: 0;
+    /* Sin margen extra */
+    display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*                            Tarjetas decorativas                            */
+/* -------------------------------------------------------------------------- */
+.nuestra-esencia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.pilares {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.pilar {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background:#efe3d1;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cite-second-section {
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Descubre mas                                */
+/* -------------------------------------------------------------------------- */
+.explora {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #efe3d1;
+}
+
+.explora h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.explora-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.explora-links a {
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    background: #6a2c0f;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.explora-links a:hover {
+    background: #8b3e1a;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Sección Final                               */
+/* -------------------------------------------------------------------------- */
+.Final-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3E2723;
+    gap: 40px;
+    padding: 30px 0;
+    border-top: solid 2px;
+}
+
+.Final-quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    color:#fff;
+    text-align: center;
+    max-width: 400px;
+}
+
+.Final-image {
+    width: 220px;
+    height: auto;
+    display: block;
+    border: solid 2px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Media Query                                */
+/* -------------------------------------------------------------------------- */
+@media (max-width:425px) {
+
+    .nav_header .nav_links {
+        display: none;
+
+    }
+
+    .nav_header {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
+        background-color: transparent;
+    }
+
+    .btn-secondary {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: transparent !important;
+    }
+
+    .hidden {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+
+    .information {
+        text-align: left;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Footer                                   */
+/* -------------------------------------------------------------------------- */
+
+.footer-social {
+    display: flex;
+    justify-content: center; /* Centra los íconos en el footer */
+    align-items: center;
+    gap: 24px; /* Espacio entre los íconos */
+    padding: 20px 0;
+}
+
+.footer-social img {
+    width: 40px;
+    height: 40px;
+}
