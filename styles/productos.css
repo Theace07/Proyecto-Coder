@@ -70,57 +70,18 @@ h2 {
 
 .container {
     display: flex;
+    justify-content: center;
     justify-items: center;
     align-items: center;
-    justify-content: space-between;
     margin: 2%;
-}
-
-.information {
-    text-align: left;
-}
-
-.grapes-image {
-    width: 300px;
-    height: 200px;
-    margin-bottom: 20px;
-    border: solid 2px;
-    margin-left: 30px;
-}
-
-.First-section {
-    border-bottom: solid 2px;
-}
-.pagina-en-desarrollo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(60, 40, 20, 0.85); /* Fondo oscuro semitransparente */
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mensaje-desarrollo {
-    background: #fff;
-    padding: 40px 60px;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
     text-align: center;
 }
 
-.mensaje-desarrollo h1 {
-    margin-bottom: 16px;
-    color: #8B6239;
+.First-section {
+    margin-top: 20px;
+    border-bottom: solid 2px;
 }
 
-.mensaje-desarrollo p {
-    color: #333;
-    font-size: 1.2rem;
-}
 /* -------------------------------------------------------------------------- */
 /*                               Segunda seccion                              */
 /* -------------------------------------------------------------------------- */
@@ -128,10 +89,11 @@ h2 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    border-bottom: solid 2px;
 }
 
 .information-second-section {
-    max-width: 60ch;
+    text-align: center;
 }
 
 .Section-content {
@@ -141,30 +103,33 @@ h2 {
     gap: 24px;
     margin-bottom: 20px;
 }
-
-.Image-second-section {
-    width: 300px;
-    height: auto;
-    border: solid 2px;
-    margin: 0;
-    /* Sin margen extra */
+.information-second-section h2{
+margin-top:20px ;
+}
+.btn-Regresa{
     display: block;
+    margin: 30px auto 0 auto;
+    padding: 12px 32px;
+    background-color: #8B6239;
+    color: #fffbe6;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s;
 }
 
+.btn-Regresa:hover {
+    background-color: #6d4c2b;
+    color: #fffbe6;
+}
 
 /* -------------------------------------------------------------------------- */
 
 /*                            Tarjetas decorativas                            */
 /* -------------------------------------------------------------------------- */
-.nuestra-esencia {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 3rem 1rem;
-}
-
 .pilares {
     display: flex;
     justify-content: center;
@@ -175,17 +140,75 @@ h2 {
 .pilar {
     flex: 1 1 250px;
     max-width: 300px;
-    background:#efe3d1;
+    background: #efe3d1;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+.second-grapes{
+    margin-bottom: 20px;
+}
+.uva-merlot {
+    width: 230px;
+    height: 200px;
+    margin-top: 190px;
+}
 
-.cite-second-section {
+.uva-syrah {
+    width: 200px;
+    height: 200px;
+}
+
+.uva-cabernet {
+    width: 200px;
+    height: 200px;
+    margin-top: 180px;
+}
+
+.second-grapes {
+    margin-top: 20px;
     text-align: center;
 }
 
+.uva-chardonay {
+    width: 230px;
+    height: 200px;
+    margin-top: 190px;
+}
+
+.uva-sauvignon {
+    width: 230px;
+    height: 200px;
+    margin-top: 230px;
+}
+.uva-riesling{
+    width: 230px;
+    height: 200px;
+    margin-top: 140px;
+}
+    /* -------------------------------------------------------------------------- */
+    /*                                Third seccion                               */
+    /* -------------------------------------------------------------------------- */
+.third-section {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.information-third-section {
+    text-align: center;
+    margin-top: 20px;
+}
+/* -------------------------------------------------------------------------- */
+/*                                  meridaje                                  */
+/* -------------------------------------------------------------------------- */
+.meridaje{ 
+    border-top: solid 2px;
+}
+.meridaje h2{
+    margin-top: 20px;
+}
 /* -------------------------------------------------------------------------- */
 /*                                Descubre mas                                */
 /* -------------------------------------------------------------------------- */
@@ -218,6 +241,7 @@ h2 {
 }
 
 .explora-links a:hover {
+    color: #fff;
     background: #8b3e1a;
 }
 
@@ -237,7 +261,7 @@ h2 {
 .Final-quote {
     font-size: 1.4rem;
     font-style: italic;
-    color:#fff;
+    color: #fff;
     text-align: center;
     max-width: 400px;
 }
@@ -295,9 +319,11 @@ h2 {
 
 .footer-social {
     display: flex;
-    justify-content: center; /* Centra los íconos en el footer */
+    justify-content: center;
+    /* Centra los íconos en el footer */
     align-items: center;
-    gap: 24px; /* Espacio entre los íconos */
+    gap: 24px;
+    /* Espacio entre los íconos */
     padding: 20px 0;
 }
 

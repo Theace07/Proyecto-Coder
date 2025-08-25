@@ -112,36 +112,6 @@ h2 {
     background-color: #6d4c2b;
     color: #fffbe6;
 }
-.pagina-en-desarrollo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(60, 40, 20, 0.85); /* Fondo oscuro semitransparente */
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mensaje-desarrollo {
-    background: #fff;
-    padding: 40px 60px;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
-.mensaje-desarrollo h1 {
-    margin-bottom: 16px;
-    color: #8B6239;
-}
-
-.mensaje-desarrollo p {
-    color: #333;
-    font-size: 1.2rem;
-}
 /* -------------------------------------------------------------------------- */
 /*                               Segunda seccion                              */
 /* -------------------------------------------------------------------------- */
