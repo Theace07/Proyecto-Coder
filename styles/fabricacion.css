@@ -116,6 +116,34 @@ h1 {
     max-width: 350px;
   }
 }
+@media (max-width: 425px) {
+  .nav_header .nav_links {
+    display: none;
+  }
+  .nav_header {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .hamburger {
+    display: block;
+    background-color: transparent;
+  }
+  .btn-secondary {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: transparent !important;
+  }
+  .hidden {
+    display: block;
+  }
+  .container {
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  .information {
+    text-align: left;
+  }
+}
 footer {
   background: linear-gradient(90deg, #6d4c2b 0%, #8b6239 100%);
   border-top: 3px solid #4B3F2A;

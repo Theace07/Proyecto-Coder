@@ -125,7 +125,35 @@ h1 {
     }
   }
 }
+@media (max-width:425px) {
+  .nav_header {
+    flex-direction: row-reverse;
+    justify-content: space-between;
 
+    .nav_links {
+      display: none;
+    }
+  }
+  .hamburger {
+    display: block;
+    background-color: transparent;
+  }
+  .btn-secondary {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: transparent !important;
+  }
+  .hidden {
+    display: block;
+  }
+  .container {
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  .information {
+    text-align: left;
+  }
+}
 // Footer
 footer {
   background: linear-gradient(90deg, $color-cafe-grad1 0%, $color-cafe-grad2 100%);
