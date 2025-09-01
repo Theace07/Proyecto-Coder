@@ -1,310 +1,135 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                Header Desing                               */
-/* -------------------------------------------------------------------------- */
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+
 body {
-    background-color: #D8C4B6 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #D8C4B6 !important;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 header {
-    background-image: url(../Images/pexels-ionelceban-2581022.jpg);
-    background-size: cover;
-    background-position: center;
-    padding: 30px;
+  background-image: url(../Images/pexels-ionelceban-2581022.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
 }
 
 .hamburger {
-    display: none;
+  display: none;
 }
 
 .nav_header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 19px;
 }
 
 .nav_links,
 li a {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    color: #F5F5DC;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color: #F5F5DC;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .nav_links {
-    display: flex;
+  display: flex;
 }
 
 .nav_links li a:hover {
-    color: #F5F5DC;
+  color: #F5F5DC;
 }
 
 ul {
-    gap: 25px;
+  gap: 25px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 h1 {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                          Primera seccion                          */
-/* -------------------------------------------------------------------------- */
-h2 {
-    text-align: center;
+.fabricacion-uva, .planta-uva, .procedencia-uva {
+  background: #e0c7b1;
+  border-radius: 12px;
+  margin: 32px auto;
+  padding: 32px 16px;
+  max-width: 1100px;
+  box-shadow: 0 2px 8px rgba(60, 40, 20, 0.07);
+}
+.fabricacion-uva h2, .planta-uva h2, .procedencia-uva h2 {
+  color: #4B3F2A;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.fabricacion-uva .fabricacion-content, .fabricacion-uva .planta-content, .fabricacion-uva .procedencia-content, .planta-uva .fabricacion-content, .planta-uva .planta-content, .planta-uva .procedencia-content, .procedencia-uva .fabricacion-content, .procedencia-uva .planta-content, .procedencia-uva .procedencia-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.fabricacion-uva .fabricacion-content p, .fabricacion-uva .planta-content p, .fabricacion-uva .procedencia-content p, .planta-uva .fabricacion-content p, .planta-uva .planta-content p, .planta-uva .procedencia-content p, .procedencia-uva .fabricacion-content p, .procedencia-uva .planta-content p, .procedencia-uva .procedencia-content p {
+  flex: 1 1 300px;
+  color: #3E2723;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.fabricacion-uva .fabricacion-content .fabricacion-img, .fabricacion-uva .fabricacion-content .planta-img, .fabricacion-uva .fabricacion-content .procedencia-img, .fabricacion-uva .planta-content .fabricacion-img, .fabricacion-uva .planta-content .planta-img, .fabricacion-uva .planta-content .procedencia-img, .fabricacion-uva .procedencia-content .fabricacion-img, .fabricacion-uva .procedencia-content .planta-img, .fabricacion-uva .procedencia-content .procedencia-img, .planta-uva .fabricacion-content .fabricacion-img, .planta-uva .fabricacion-content .planta-img, .planta-uva .fabricacion-content .procedencia-img, .planta-uva .planta-content .fabricacion-img, .planta-uva .planta-content .planta-img, .planta-uva .planta-content .procedencia-img, .planta-uva .procedencia-content .fabricacion-img, .planta-uva .procedencia-content .planta-img, .planta-uva .procedencia-content .procedencia-img, .procedencia-uva .fabricacion-content .fabricacion-img, .procedencia-uva .fabricacion-content .planta-img, .procedencia-uva .fabricacion-content .procedencia-img, .procedencia-uva .planta-content .fabricacion-img, .procedencia-uva .planta-content .planta-img, .procedencia-uva .planta-content .procedencia-img, .procedencia-uva .procedencia-content .fabricacion-img, .procedencia-uva .procedencia-content .planta-img, .procedencia-uva .procedencia-content .procedencia-img {
+  width: 260px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #8B6239;
+  box-shadow: 0 2px 8px rgba(60, 40, 20, 0.1);
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin: 2%;
-    text-align: center;
-}
-
-.First-section {
-    border-bottom: solid 2px;
-    border-top: solid 2px;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                               Segunda seccion                              */
-/* -------------------------------------------------------------------------- */
-.Second-Section {
-    display: flex;
+@media (max-width: 900px) {
+  .fabricacion-uva .fabricacion-content, .fabricacion-uva .planta-content, .fabricacion-uva .procedencia-content, .planta-uva .fabricacion-content, .planta-uva .planta-content, .planta-uva .procedencia-content, .procedencia-uva .fabricacion-content, .procedencia-uva .planta-content, .procedencia-uva .procedencia-content {
     flex-direction: column;
-    margin-top: 20px;
-    border-bottom: solid 2px;
-}
-
-.information-second-section {
+    gap: 20px;
     text-align: center;
+  }
+  .fabricacion-uva .fabricacion-content .fabricacion-img, .fabricacion-uva .fabricacion-content .planta-img, .fabricacion-uva .fabricacion-content .procedencia-img, .fabricacion-uva .planta-content .fabricacion-img, .fabricacion-uva .planta-content .planta-img, .fabricacion-uva .planta-content .procedencia-img, .fabricacion-uva .procedencia-content .fabricacion-img, .fabricacion-uva .procedencia-content .planta-img, .fabricacion-uva .procedencia-content .procedencia-img, .planta-uva .fabricacion-content .fabricacion-img, .planta-uva .fabricacion-content .planta-img, .planta-uva .fabricacion-content .procedencia-img, .planta-uva .planta-content .fabricacion-img, .planta-uva .planta-content .planta-img, .planta-uva .planta-content .procedencia-img, .planta-uva .procedencia-content .fabricacion-img, .planta-uva .procedencia-content .planta-img, .planta-uva .procedencia-content .procedencia-img, .procedencia-uva .fabricacion-content .fabricacion-img, .procedencia-uva .fabricacion-content .planta-img, .procedencia-uva .fabricacion-content .procedencia-img, .procedencia-uva .planta-content .fabricacion-img, .procedencia-uva .planta-content .planta-img, .procedencia-uva .planta-content .procedencia-img, .procedencia-uva .procedencia-content .fabricacion-img, .procedencia-uva .procedencia-content .planta-img, .procedencia-uva .procedencia-content .procedencia-img {
+    width: 90%;
+    max-width: 350px;
+  }
 }
-
-.Section-content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 24px;
-    margin-bottom: 20px;
+footer {
+  background: linear-gradient(90deg, #6d4c2b 0%, #8b6239 100%);
+  border-top: 3px solid #4B3F2A;
+  box-shadow: 0 -2px 8px rgba(60, 40, 20, 0.1);
 }
-
-.btn-Regresa{
-    display: block;
-    margin: 30px auto 0 auto;
-    padding: 12px 32px;
-    background-color: #8B6239;
-    color: #fffbe6;
-    border: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    transition: background 0.2s;
+footer .footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
 }
-
-.btn-Regresa:hover {
-    background-color: #6d4c2b;
-    color: #fffbe6;
-}
-
-/* -------------------------------------------------------------------------- */
-
-/*                            Tarjetas decorativas                            */
-/* -------------------------------------------------------------------------- */
-.pilares {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.pilar {
-    flex: 1 1 250px;
-    max-width: 300px;
-    background: #efe3d1;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.second-grapes{
-    margin-bottom: 20px;
-}
-.uva-merlot {
-    width: 230px;
-    height: 200px;
-    margin-top: 190px;
-}
-
-.uva-syrah {
-    width: 200px;
-    height: 200px;
-}
-
-.uva-cabernet {
-    width: 200px;
-    height: 200px;
-    margin-top: 180px;
-}
-
-.second-grapes {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.uva-chardonay {
-    width: 230px;
-    height: 200px;
-    margin-top: 190px;
-}
-
-.uva-sauvignon {
-    width: 230px;
-    height: 200px;
-    margin-top: 230px;
-}
-.uva-riesling{
-    width: 230px;
-    height: 200px;
-    margin-top: 140px;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                Descubre mas                                */
-/* -------------------------------------------------------------------------- */
-.explora {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: #efe3d1;
-}
-
-.explora h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.explora-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.explora-links a {
-    text-decoration: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    background: #6a2c0f;
-    color: #fff;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.explora-links a:hover {
-    color: #fff;
-    background: #8b3e1a;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                Sección Final                               */
-/* -------------------------------------------------------------------------- */
-.Final-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #3E2723;
-    gap: 40px;
-    padding: 30px 0;
-    border-top: solid 2px;
-}
-
-.Final-quote {
-    font-size: 1.4rem;
-    font-style: italic;
-    color: #fff;
-    text-align: center;
-    max-width: 400px;
-}
-
-.Final-image {
-    width: 220px;
-    height: auto;
-    display: block;
-    border: solid 2px;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                 Media Query                                */
-/* -------------------------------------------------------------------------- */
-@media (max-width:425px) {
-
-    .nav_header .nav_links {
-        display: none;
-
-    }
-
-    .nav_header {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-
-    .hamburger {
-        display: block;
-        background-color: transparent;
-    }
-
-    .btn-secondary {
-        background-color: transparent !important;
-        border-color: transparent !important;
-        color: transparent !important;
-    }
-
-    .hidden {
-        display: block;
-    }
-
-    .container {
-        flex-direction: column;
-        flex-direction: column-reverse;
-    }
-
-    .information {
-        text-align: left;
-    }
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                   Footer                                   */
-/* -------------------------------------------------------------------------- */
-
-.footer-social {
-    display: flex;
-    justify-content: center;
-    /* Centra los íconos en el footer */
-    align-items: center;
-    gap: 24px;
-    /* Espacio entre los íconos */
-    padding: 20px 0;
-}
-
-.footer-social img {
-    width: 40px;
-    height: 40px;
-}
+footer .footer-social img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 4px rgba(60, 40, 20, 0.15));
+}/*# sourceMappingURL=fabricacion.css.map */

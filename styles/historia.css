@@ -21,7 +21,7 @@ main {
 }
 
 header {
-  background-image: url(./Images/pexels-ionelceban-2581022.jpg);
+  background-image: url(../Images/pexels-ionelceban-2581022.jpg);
   background-size: cover;
   background-position: center;
   padding: 30px;
@@ -63,140 +63,73 @@ ul {
 }
 
 h1 {
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
-h2 {
+.historia-vino {
+  background: #e0c7b1;
+  border-radius: 12px;
+  margin: 32px auto;
+  padding: 32px 16px;
+  max-width: 1100px;
+  box-shadow: 0 2px 8px rgba(60, 40, 20, 0.07);
+}
+.historia-vino h2 {
+  color: #4B3F2A;
   text-align: center;
+  margin-bottom: 16px;
 }
-
-.container {
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  justify-content: space-between;
-  margin: 2%;
-}
-
-.information {
-  text-align: left;
-}
-
-.grapes-image {
-  width: 300px;
-  height: 200px;
-  margin-bottom: 20px;
-  border: solid 2px;
-  margin-left: 30px;
-}
-
-.First-section {
-  border-bottom: solid 2px;
-}
-
-.btn-explora {
-  display: block;
-  margin: 30px auto 0 auto;
-  padding: 12px 32px;
-  background-color: #8b6239;
-  color: #fffbe6;
-  border: none;
-  font-size: 1.1rem;
-  font-weight: bold;
+.historia-vino .historia-intro {
   text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: background 0.2s;
+  color: #3E2723;
+  margin-bottom: 32px;
+  font-size: 1.15rem;
 }
-.btn-explora:hover {
-  background-color: #6d4c2b;
-  color: #fffbe6;
-}
-
-.Second-Section {
+.historia-vino .timeline {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  gap: 32px;
 }
-
-.information-second-section {
-  max-width: 60ch;
-}
-
-.Section-content {
+.historia-vino .timeline .timeline-item {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   gap: 24px;
-  margin-bottom: 20px;
+  background: #f5e6d3;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(60, 40, 20, 0.06);
 }
-
-.Image-second-section {
-  width: 300px;
-  height: auto;
-  border: solid 2px;
-  margin: 0;
-  display: block;
-}
-
-.nuestra-esencia {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.pilares {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.pilar {
-  flex: 1 1 250px;
-  max-width: 300px;
-  background: #efe3d1;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.cite-second-section {
-  text-align: center;
-}
-
-.explora {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: #efe3d1;
-}
-.explora h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-.explora .explora-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-.explora .explora-links a {
-  text-decoration: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  background: #6a2c0f;
-  color: #fff;
+.historia-vino .timeline .timeline-item .timeline-date {
+  min-width: 90px;
   font-weight: bold;
-  transition: 0.3s;
+  color: #8b6239;
+  font-size: 1.1rem;
+  margin-top: 12px;
 }
-.explora .explora-links a:hover {
-  color: #fff;
-  background: #8b3e1a;
+.historia-vino .timeline .timeline-item .timeline-content {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.historia-vino .timeline .timeline-item .timeline-content img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #8b6239;
+  box-shadow: 0 1px 4px rgba(60, 40, 20, 0.08);
+}
+.historia-vino .timeline .timeline-item .timeline-content h3 {
+  margin: 0 0 6px 0;
+  color: #4B3F2A;
+  font-size: 1.1rem;
+}
+.historia-vino .timeline .timeline-item .timeline-content p {
+  margin: 0;
+  color: #3E2723;
+  font-size: 1rem;
 }
 
 .Final-section {
@@ -208,16 +141,14 @@ h2 {
   padding: 30px 0;
   border-top: solid 2px;
 }
-
-.Final-quote {
+.Final-section .Final-quote {
   font-size: 1.4rem;
   font-style: italic;
   color: #fff;
   text-align: center;
   max-width: 400px;
 }
-
-.Final-image {
+.Final-section .Final-image {
   width: 220px;
   height: auto;
   display: block;
@@ -225,12 +156,12 @@ h2 {
 }
 
 @media (max-width: 425px) {
-  .nav_header .nav_links {
-    display: none;
-  }
   .nav_header {
     flex-direction: row-reverse;
     justify-content: space-between;
+  }
+  .nav_header .nav_links {
+    display: none;
   }
   .hamburger {
     display: block;
@@ -252,6 +183,16 @@ h2 {
     text-align: left;
   }
 }
+@media (max-width: 800px) {
+  .historia-vino .timeline .timeline-item, .historia-vino .timeline .timeline-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .historia-vino .timeline .timeline-date {
+    margin-top: 0;
+  }
+}
 footer {
   background: linear-gradient(90deg, #6d4c2b 0%, #8b6239 100%);
   border-top: 3px solid #4B3F2A;
@@ -268,4 +209,4 @@ footer .footer-social img {
   width: 40px;
   height: 40px;
   filter: drop-shadow(0 2px 4px rgba(60, 40, 20, 0.15));
-}/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=historia.css.map */
