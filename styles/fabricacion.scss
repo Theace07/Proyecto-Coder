@@ -16,16 +16,25 @@ $color-blanco: #F5F5DC;
 }
 html, body {
   height: 100%;
-  min-height: 100vh;
+  // min-height: 100vh; // Eliminado para evitar problemas de viewport en móviles
 }
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: $color-bg !important;
+  // min-height: 100vh; // Eliminado para evitar problemas de viewport en móviles
+  background-color: $color-bg; // Quitado !important
 }
 main {
   flex: 1 0 auto;
+  background-color: $color-bg;
+}
+
+body {
+  background-color: $color-bg;
+}
+
+html {
+  background-color: $color-bg;
 }
 
 // Header
@@ -138,10 +147,14 @@ h1 {
     display: block;
     background-color: transparent;
   }
+  // Centraliza el modo transparente en una clase
+  .is-transparent {
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
   .btn-secondary {
-    background-color: transparent !important;
-    border-color: transparent !important;
-    color: transparent !important;
+    @extend .is-transparent;
   }
   .hidden {
     display: block;
@@ -168,8 +181,9 @@ footer {
     padding: 24px 0;
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 2.5em; // Usar unidades relativas
+      height: auto; // Permitir que crezca con el contenido
+      line-height: 1.5; // Mejor accesibilidad
       filter: drop-shadow(0 2px 4px rgba(60,40,20,0.15));
     }
   }

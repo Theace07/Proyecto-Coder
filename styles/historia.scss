@@ -17,16 +17,25 @@ $color-shadow: rgba(0, 0, 0, 0.15);
 }
 html, body {
   height: 100%;
-  min-height: 100vh;
+  // min-height: 100vh; // Eliminado para evitar problemas de viewport
 }
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: $color-bg !important;
+  // min-height: 100vh; // Eliminado para evitar problemas de viewport
+  background-color: $color-bg; // Quitado !important
 }
 main {
   flex: 1 0 auto;
+}
+html {
+  background-color: $color-bg;
+}
+body {
+  background-color: $color-bg;
+}
+main {
+  background-color: $color-bg;
 }
 
 // Header
@@ -121,7 +130,8 @@ h1 {
 
         img {
           width: 80px;
-          height: 80px;
+          min-height: 60px; // Usar min-height en vez de height fijo
+          height: auto; // Permitir que crezca si el contenido lo requiere
           object-fit: cover;
           border-radius: 8px;
           border: 2px solid $color-cafe-grad2;
@@ -167,6 +177,13 @@ h1 {
   }
 }
 
+// Variante para transparentar botones/inputs
+.is-transparent {
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
 // Media Queries
 @media (max-width:425px) {
   .nav_header {
@@ -182,9 +199,9 @@ h1 {
     background-color: transparent;
   }
   .btn-secondary {
-    background-color: transparent !important;
-    border-color: transparent !important;
-    color: transparent !important;
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
   }
   .hidden {
     display: block;
@@ -211,7 +228,6 @@ h1 {
     }
   }
 }
-
 // Footer
 footer {
   background: linear-gradient(90deg, $color-cafe-grad1 0%, $color-cafe-grad2 100%);
@@ -226,8 +242,9 @@ footer {
     padding: 24px 0;
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 2.5em; // Usar unidades relativas
+      height: auto; // Permitir que crezca con el contenido
+      line-height: 1.5; // Mejor accesibilidad
       filter: drop-shadow(0 2px 4px rgba(60,40,20,0.15));
     }
   }

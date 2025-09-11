@@ -6,14 +6,20 @@
 
 html, body {
   height: 100%;
-  min-height: 100vh;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: #D8C4B6 !important;
+  /* min-height: 100vh; */
+  background-color: #D8C4B6;
+}
+
+main,
+.container,
+.First-section,
+.Second-Section {
+  background-color: #D8C4B6;
 }
 
 main {
@@ -85,7 +91,7 @@ h2 {
 
 .grapes-image {
   width: 300px;
-  height: 200px;
+  min-height: 200px;
   margin-bottom: 20px;
   border: solid 2px;
   margin-left: 30px;
@@ -237,9 +243,9 @@ h2 {
     background-color: transparent;
   }
   .btn-secondary {
-    background-color: transparent !important;
-    border-color: transparent !important;
-    color: transparent !important;
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
   }
   .hidden {
     display: block;
@@ -265,7 +271,9 @@ footer .footer-social {
   padding: 24px 0;
 }
 footer .footer-social img {
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: auto;
+  line-height: 1.5;
   filter: drop-shadow(0 2px 4px rgba(60, 40, 20, 0.15));
+  padding: 0.25em;
 }/*# sourceMappingURL=styles.css.map */
