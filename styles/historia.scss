@@ -1,4 +1,4 @@
-// Variables de color
+// Color tokens
 $color-bg: #D8C4B6;
 $color-cafe: #3E2723;
 $color-cafe-grad1: #6d4c2b;
@@ -6,8 +6,81 @@ $color-cafe-grad2: #8b6239;
 $color-cafe-oscuro: #4B3F2A;
 $color-cafe-claro: #e0c7b1;
 $color-blanco: #fff;
-$color-blanco2: #F5F5DC;
+$color-blanco2: #fffbe6;
+$color-crema: #f5f5dc;
 $color-shadow: rgba(0, 0, 0, 0.15);
+$color-acento: #a67c52;
+$color-timeline-card: #f5e6d3;
+
+$color-text: $color-cafe-oscuro;
+
+// Shadow tokens
+$shadow-card: rgba(0, 0, 0, 0.1);
+$shadow-card-soft: rgba(0, 0, 0, 0.07);
+$shadow-warm: rgba(60, 40, 20, 0.08);
+$shadow-warm-soft: rgba(60, 40, 20, 0.06);
+$shadow-warm-medium: rgba(60, 40, 20, 0.10);
+$shadow-warm-strong: rgba(60, 40, 20, 0.15);
+
+// Spacing scale
+$space-xxs: 0.5rem;
+$space-xs: 0.75rem;
+$space-sm: 1rem;
+$space-md: 1.25rem;
+$space-lg: 1.5rem;
+$space-xl: 1.875rem;
+$space-xxl: 2rem;
+$space-xxxl: 2.5rem;
+$space-section: 3rem;
+
+// Radius tokens
+$radius-sm: 0.5rem;
+$radius-md: 0.75rem;
+
+// Mixins
+@mixin btn($bg, $fg) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-sm $space-md;
+  border: 2px solid transparent;
+  border-radius: $radius-md;
+  background-color: $bg;
+  color: $fg;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+@mixin grid-auto($min: 220px, $gap: $space-md) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: $gap;
+}
+
+@mixin transparent-control($text: inherit) {
+  background-color: transparent;
+  border-color: transparent;
+  color: $text;
+}
+
+%visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
 
 // Reset
 * {
@@ -15,26 +88,22 @@ $color-shadow: rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   padding: 0;
 }
-html, body {
+
+html,
+body {
   height: 100%;
-  // min-height: 100vh; // Eliminado para evitar problemas de viewport
 }
+
 body {
   display: flex;
   flex-direction: column;
-  // min-height: 100vh; // Eliminado para evitar problemas de viewport
-  background-color: $color-bg; // Quitado !important
+  background-color: $color-bg;
+  color: $color-text;
+  line-height: 1.5;
 }
+
 main {
   flex: 1 0 auto;
-}
-html {
-  background-color: $color-bg;
-}
-body {
-  background-color: $color-bg;
-}
-main {
   background-color: $color-bg;
 }
 
@@ -43,105 +112,132 @@ header {
   background-image: url(../Images/pexels-ionelceban-2581022.jpg);
   background-size: cover;
   background-position: center;
-  padding: 30px;
+  padding: $space-xl;
 }
+
 .hamburger {
   display: none;
 }
+
 .nav_header {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 1.1875rem;
 
-  .nav_links,
-  li a {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    color: $color-blanco2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
   .nav_links {
     display: flex;
-    li a:hover {
+    gap: $space-lg;
+    list-style: none;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
       color: $color-blanco2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: $color-blanco;
     }
   }
 }
-ul {
-  gap: 25px;
+
+.dropdown {
+  .btn {
+    @include btn($color-cafe, $color-crema);
+    border-color: $color-cafe-grad2;
+    background-image: none;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: $color-acento;
+    color: $color-blanco;
+  }
 }
+
 .hidden {
-  display: none;
+  @extend %visually-hidden;
 }
+
 h1 {
   color: $color-blanco;
   text-align: center;
 }
 
-// Sección Historia del vino
+// Historia section
 .historia-vino {
   background: $color-cafe-claro;
-  border-radius: 12px;
-  margin: 32px auto;
-  padding: 32px 16px;
-  max-width: 1100px;
-  box-shadow: 0 2px 8px rgba(60,40,20,0.07);
+  border-radius: $radius-md;
+  margin: $space-xxl auto;
+  padding: $space-xxl $space-sm;
+  max-width: 68.75rem;
+  box-shadow: 0 2px 8px $shadow-card-soft;
 
   h2 {
     color: $color-cafe-oscuro;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: $space-md;
   }
+
   .historia-intro {
     text-align: center;
     color: $color-cafe;
-    margin-bottom: 32px;
+    margin-bottom: $space-xxl;
     font-size: 1.15rem;
   }
+
   .timeline {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: $space-xl;
 
     .timeline-item {
       display: flex;
       align-items: flex-start;
-      gap: 24px;
-      background: #f5e6d3;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 1px 4px rgba(60,40,20,0.06);
+      gap: $space-lg;
+      background: $color-timeline-card;
+      border-radius: $radius-sm;
+      padding: $space-md;
+      box-shadow: 0 1px 4px $shadow-warm-soft;
 
       .timeline-date {
-        min-width: 90px;
-        font-weight: bold;
+        min-width: 5.625rem;
+        font-weight: 700;
         color: $color-cafe-grad2;
         font-size: 1.1rem;
-        margin-top: 12px;
+        margin-top: $space-xs;
       }
+
       .timeline-content {
-        display: flex;
-        gap: 18px;
+        @include grid-auto(120px, $space-md);
         align-items: flex-start;
 
         img {
-          width: 80px;
-          min-height: 60px; // Usar min-height en vez de height fijo
-          height: auto; // Permitir que crezca si el contenido lo requiere
+          width: 5rem;
+          min-height: 3.75rem;
+          height: auto;
           object-fit: cover;
-          border-radius: 8px;
+          border-radius: $radius-sm;
           border: 2px solid $color-cafe-grad2;
-          box-shadow: 0 1px 4px rgba(60,40,20,0.08);
+          box-shadow: 0 1px 4px $shadow-warm;
         }
+
         h3 {
-          margin: 0 0 6px 0;
+          margin: 0 0 $space-xxs 0;
           color: $color-cafe-oscuro;
           font-size: 1.1rem;
         }
+
         p {
           margin: 0;
           color: $color-cafe;
@@ -152,40 +248,63 @@ h1 {
   }
 }
 
-// Sección Final
+// Final quote
 .Final-section {
   display: flex;
   justify-content: center;
   align-items: center;
   background: $color-cafe;
-  gap: 40px;
-  padding: 30px 0;
-  border-top: solid 2px;
+  gap: $space-xxxl;
+  padding: $space-xl 0;
+  border-top: 2px solid $color-cafe-oscuro;
 
   .Final-quote {
     font-size: 1.4rem;
     font-style: italic;
     color: $color-blanco;
     text-align: center;
-    max-width: 400px;
+    max-width: 25rem;
   }
+
   .Final-image {
-    width: 220px;
+    width: 13.75rem;
     height: auto;
     display: block;
-    border: solid 2px;
+    border: 2px solid $color-blanco;
   }
 }
 
-// Variante para transparentar botones/inputs
+// Utilities
 .is-transparent {
-  background-color: transparent;
-  border-color: transparent;
-  color: transparent;
+  @include transparent-control();
 }
 
 // Media Queries
-@media (max-width:425px) {
+@media (max-width: 800px) {
+  .historia-vino {
+    .timeline {
+      .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .timeline-date {
+          margin-top: 0;
+        }
+
+        .timeline-content {
+          justify-items: center;
+
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
   .nav_header {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -194,58 +313,55 @@ h1 {
       display: none;
     }
   }
+
   .hamburger {
     display: block;
     background-color: transparent;
   }
+
   .btn-secondary {
-    background-color: transparent;
-    border-color: transparent;
-    color: transparent;
+    @include transparent-control();
   }
+
   .hidden {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    overflow: visible;
     display: block;
   }
+
   .container {
-    flex-direction: column;
     flex-direction: column-reverse;
   }
+
   .information {
     text-align: left;
   }
 }
-@media (max-width: 800px) {
-  .historia-vino {
-    .timeline {
-      .timeline-item, .timeline-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .timeline-date {
-        margin-top: 0;
-      }
-    }
-  }
-}
+
 // Footer
 footer {
   background: linear-gradient(90deg, $color-cafe-grad1 0%, $color-cafe-grad2 100%);
   border-top: 3px solid $color-cafe-oscuro;
-  box-shadow: 0 -2px 8px rgba(60,40,20,0.10);
+  box-shadow: 0 -2px 8px $shadow-warm-medium;
 
   .footer-social {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    padding: 24px 0;
+    gap: $space-lg;
+    padding: $space-lg 0;
 
     img {
-      width: 2.5em; // Usar unidades relativas
-      height: auto; // Permitir que crezca con el contenido
-      line-height: 1.5; // Mejor accesibilidad
-      filter: drop-shadow(0 2px 4px rgba(60,40,20,0.15));
+      width: 2.5em;
+      height: auto;
+      line-height: 1.5;
+      filter: drop-shadow(0 2px 4px $shadow-warm-strong);
     }
   }
 }

@@ -1,10 +1,24 @@
+.hidden, .visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -12,6 +26,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #D8C4B6;
+  color: #4B3F2A;
+  line-height: 1.5;
 }
 
 main {
@@ -19,19 +35,11 @@ main {
   background-color: #D8C4B6;
 }
 
-body {
-  background-color: #D8C4B6;
-}
-
-html {
-  background-color: #D8C4B6;
-}
-
 header {
   background-image: url(../Images/pexels-ionelceban-2581022.jpg);
   background-size: cover;
   background-position: center;
-  padding: 30px;
+  padding: 1.875rem;
 }
 
 .hamburger {
@@ -44,83 +52,170 @@ header {
   justify-content: center;
   flex-direction: column;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 1.1875rem;
 }
-
-.nav_links,
-li a {
+.nav_header .nav_links {
   display: flex;
+  gap: 1.5rem;
   list-style: none;
-  text-decoration: none;
-  color: #F5F5DC;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-
-.nav_links {
+.nav_header .nav_links li {
+  list-style: none;
+}
+.nav_header .nav_links a {
   display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f5f5dc;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease;
+}
+.nav_header .nav_links a:hover {
+  color: #fff;
 }
 
-.nav_links li a:hover {
-  color: #F5F5DC;
+.dropdown .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  background-color: #3E2723;
+  color: #f5f5dc;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border-color: #8b6239;
+  background-image: none;
 }
-
-ul {
-  gap: 25px;
-}
-
-.hidden {
-  display: none;
+.dropdown .btn:hover,
+.dropdown .btn:focus {
+  background-color: #a67c52;
+  color: #fff;
 }
 
 h1 {
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
-.fabricacion-uva, .planta-uva, .procedencia-uva {
+.fabricacion-uva,
+.planta-uva,
+.procedencia-uva {
   background: #e0c7b1;
-  border-radius: 12px;
-  margin: 32px auto;
-  padding: 32px 16px;
-  max-width: 1100px;
-  box-shadow: 0 2px 8px rgba(60, 40, 20, 0.07);
+  border-radius: 0.75rem;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  max-width: 68.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
-.fabricacion-uva h2, .planta-uva h2, .procedencia-uva h2 {
+.fabricacion-uva h2,
+.planta-uva h2,
+.procedencia-uva h2 {
   color: #4B3F2A;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
-.fabricacion-uva .fabricacion-content, .fabricacion-uva .planta-content, .fabricacion-uva .procedencia-content, .planta-uva .fabricacion-content, .planta-uva .planta-content, .planta-uva .procedencia-content, .procedencia-uva .fabricacion-content, .procedencia-uva .planta-content, .procedencia-uva .procedencia-content {
-  display: flex;
+.fabricacion-uva .fabricacion-content,
+.fabricacion-uva .planta-content,
+.fabricacion-uva .procedencia-content,
+.planta-uva .fabricacion-content,
+.planta-uva .planta-content,
+.planta-uva .procedencia-content,
+.procedencia-uva .fabricacion-content,
+.procedencia-uva .planta-content,
+.procedencia-uva .procedencia-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.875rem;
   align-items: center;
-  gap: 32px;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-items: center;
 }
-.fabricacion-uva .fabricacion-content p, .fabricacion-uva .planta-content p, .fabricacion-uva .procedencia-content p, .planta-uva .fabricacion-content p, .planta-uva .planta-content p, .planta-uva .procedencia-content p, .procedencia-uva .fabricacion-content p, .procedencia-uva .planta-content p, .procedencia-uva .procedencia-content p {
-  flex: 1 1 300px;
-  color: #3E2723;
+.fabricacion-uva .fabricacion-content p,
+.fabricacion-uva .planta-content p,
+.fabricacion-uva .procedencia-content p,
+.planta-uva .fabricacion-content p,
+.planta-uva .planta-content p,
+.planta-uva .procedencia-content p,
+.procedencia-uva .fabricacion-content p,
+.procedencia-uva .planta-content p,
+.procedencia-uva .procedencia-content p {
+  color: #4B3F2A;
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
+  text-align: left;
 }
-.fabricacion-uva .fabricacion-content .fabricacion-img, .fabricacion-uva .fabricacion-content .planta-img, .fabricacion-uva .fabricacion-content .procedencia-img, .fabricacion-uva .planta-content .fabricacion-img, .fabricacion-uva .planta-content .planta-img, .fabricacion-uva .planta-content .procedencia-img, .fabricacion-uva .procedencia-content .fabricacion-img, .fabricacion-uva .procedencia-content .planta-img, .fabricacion-uva .procedencia-content .procedencia-img, .planta-uva .fabricacion-content .fabricacion-img, .planta-uva .fabricacion-content .planta-img, .planta-uva .fabricacion-content .procedencia-img, .planta-uva .planta-content .fabricacion-img, .planta-uva .planta-content .planta-img, .planta-uva .planta-content .procedencia-img, .planta-uva .procedencia-content .fabricacion-img, .planta-uva .procedencia-content .planta-img, .planta-uva .procedencia-content .procedencia-img, .procedencia-uva .fabricacion-content .fabricacion-img, .procedencia-uva .fabricacion-content .planta-img, .procedencia-uva .fabricacion-content .procedencia-img, .procedencia-uva .planta-content .fabricacion-img, .procedencia-uva .planta-content .planta-img, .procedencia-uva .planta-content .procedencia-img, .procedencia-uva .procedencia-content .fabricacion-img, .procedencia-uva .procedencia-content .planta-img, .procedencia-uva .procedencia-content .procedencia-img {
-  width: 260px;
+.fabricacion-uva .fabricacion-content .fabricacion-img,
+.fabricacion-uva .fabricacion-content .planta-img,
+.fabricacion-uva .fabricacion-content .procedencia-img,
+.fabricacion-uva .planta-content .fabricacion-img,
+.fabricacion-uva .planta-content .planta-img,
+.fabricacion-uva .planta-content .procedencia-img,
+.fabricacion-uva .procedencia-content .fabricacion-img,
+.fabricacion-uva .procedencia-content .planta-img,
+.fabricacion-uva .procedencia-content .procedencia-img,
+.planta-uva .fabricacion-content .fabricacion-img,
+.planta-uva .fabricacion-content .planta-img,
+.planta-uva .fabricacion-content .procedencia-img,
+.planta-uva .planta-content .fabricacion-img,
+.planta-uva .planta-content .planta-img,
+.planta-uva .planta-content .procedencia-img,
+.planta-uva .procedencia-content .fabricacion-img,
+.planta-uva .procedencia-content .planta-img,
+.planta-uva .procedencia-content .procedencia-img,
+.procedencia-uva .fabricacion-content .fabricacion-img,
+.procedencia-uva .fabricacion-content .planta-img,
+.procedencia-uva .fabricacion-content .procedencia-img,
+.procedencia-uva .planta-content .fabricacion-img,
+.procedencia-uva .planta-content .planta-img,
+.procedencia-uva .planta-content .procedencia-img,
+.procedencia-uva .procedencia-content .fabricacion-img,
+.procedencia-uva .procedencia-content .planta-img,
+.procedencia-uva .procedencia-content .procedencia-img {
+  width: 16.25rem;
+  max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   border: 2px solid #8B6239;
   box-shadow: 0 2px 8px rgba(60, 40, 20, 0.1);
 }
 
+.is-transparent {
+  background-color: transparent;
+  border-color: transparent;
+  color: inherit;
+}
+
 @media (max-width: 900px) {
-  .fabricacion-uva .fabricacion-content, .fabricacion-uva .planta-content, .fabricacion-uva .procedencia-content, .planta-uva .fabricacion-content, .planta-uva .planta-content, .planta-uva .procedencia-content, .procedencia-uva .fabricacion-content, .procedencia-uva .planta-content, .procedencia-uva .procedencia-content {
-    flex-direction: column;
-    gap: 20px;
+  .fabricacion-uva,
+  .planta-uva,
+  .procedencia-uva {
+    padding: 1.875rem 1rem;
+  }
+  .fabricacion-uva .fabricacion-content,
+  .fabricacion-uva .planta-content,
+  .fabricacion-uva .procedencia-content,
+  .planta-uva .fabricacion-content,
+  .planta-uva .planta-content,
+  .planta-uva .procedencia-content,
+  .procedencia-uva .fabricacion-content,
+  .procedencia-uva .planta-content,
+  .procedencia-uva .procedencia-content {
     text-align: center;
   }
-  .fabricacion-uva .fabricacion-content .fabricacion-img, .fabricacion-uva .fabricacion-content .planta-img, .fabricacion-uva .fabricacion-content .procedencia-img, .fabricacion-uva .planta-content .fabricacion-img, .fabricacion-uva .planta-content .planta-img, .fabricacion-uva .planta-content .procedencia-img, .fabricacion-uva .procedencia-content .fabricacion-img, .fabricacion-uva .procedencia-content .planta-img, .fabricacion-uva .procedencia-content .procedencia-img, .planta-uva .fabricacion-content .fabricacion-img, .planta-uva .fabricacion-content .planta-img, .planta-uva .fabricacion-content .procedencia-img, .planta-uva .planta-content .fabricacion-img, .planta-uva .planta-content .planta-img, .planta-uva .planta-content .procedencia-img, .planta-uva .procedencia-content .fabricacion-img, .planta-uva .procedencia-content .planta-img, .planta-uva .procedencia-content .procedencia-img, .procedencia-uva .fabricacion-content .fabricacion-img, .procedencia-uva .fabricacion-content .planta-img, .procedencia-uva .fabricacion-content .procedencia-img, .procedencia-uva .planta-content .fabricacion-img, .procedencia-uva .planta-content .planta-img, .procedencia-uva .planta-content .procedencia-img, .procedencia-uva .procedencia-content .fabricacion-img, .procedencia-uva .procedencia-content .planta-img, .procedencia-uva .procedencia-content .procedencia-img {
-    width: 90%;
-    max-width: 350px;
+  .fabricacion-uva .fabricacion-content p,
+  .fabricacion-uva .planta-content p,
+  .fabricacion-uva .procedencia-content p,
+  .planta-uva .fabricacion-content p,
+  .planta-uva .planta-content p,
+  .planta-uva .procedencia-content p,
+  .procedencia-uva .fabricacion-content p,
+  .procedencia-uva .planta-content p,
+  .procedencia-uva .procedencia-content p {
+    text-align: center;
   }
 }
 @media (max-width: 425px) {
@@ -135,16 +230,23 @@ h1 {
     display: block;
     background-color: transparent;
   }
-  .is-transparent, .btn-secondary {
+  .btn-secondary {
     background-color: transparent;
     border-color: transparent;
-    color: transparent;
+    color: inherit;
   }
   .hidden {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    overflow: visible;
     display: block;
   }
   .container {
-    flex-direction: column;
     flex-direction: column-reverse;
   }
   .information {
@@ -160,8 +262,8 @@ footer .footer-social {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  padding: 24px 0;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
 }
 footer .footer-social img {
   width: 2.5em;

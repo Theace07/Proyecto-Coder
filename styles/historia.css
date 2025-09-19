@@ -1,10 +1,24 @@
+.hidden, .visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -12,21 +26,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #D8C4B6;
+  color: #4B3F2A;
+  line-height: 1.5;
 }
 
 main {
   flex: 1 0 auto;
-}
-
-html {
-  background-color: #D8C4B6;
-}
-
-body {
-  background-color: #D8C4B6;
-}
-
-main {
   background-color: #D8C4B6;
 }
 
@@ -34,7 +39,7 @@ header {
   background-image: url(../Images/pexels-ionelceban-2581022.jpg);
   background-size: cover;
   background-position: center;
-  padding: 30px;
+  padding: 1.875rem;
 }
 
 .hamburger {
@@ -47,29 +52,48 @@ header {
   justify-content: center;
   flex-direction: column;
   font-weight: bold;
-  font-size: 19px;
-}
-.nav_header .nav_links,
-.nav_header li a {
-  display: flex;
-  list-style: none;
-  text-decoration: none;
-  color: #F5F5DC;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 1.1875rem;
 }
 .nav_header .nav_links {
   display: flex;
+  gap: 1.5rem;
+  list-style: none;
 }
-.nav_header .nav_links li a:hover {
-  color: #F5F5DC;
+.nav_header .nav_links li {
+  list-style: none;
+}
+.nav_header .nav_links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fffbe6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease;
+}
+.nav_header .nav_links a:hover {
+  color: #fff;
 }
 
-ul {
-  gap: 25px;
+.dropdown .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  background-color: #3E2723;
+  color: #f5f5dc;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border-color: #8b6239;
+  background-image: none;
 }
-
-.hidden {
-  display: none;
+.dropdown .btn:hover,
+.dropdown .btn:focus {
+  background-color: #a67c52;
+  color: #fff;
 }
 
 h1 {
@@ -79,61 +103,62 @@ h1 {
 
 .historia-vino {
   background: #e0c7b1;
-  border-radius: 12px;
-  margin: 32px auto;
-  padding: 32px 16px;
-  max-width: 1100px;
-  box-shadow: 0 2px 8px rgba(60, 40, 20, 0.07);
+  border-radius: 0.75rem;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  max-width: 68.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
 .historia-vino h2 {
   color: #4B3F2A;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 1.25rem;
 }
 .historia-vino .historia-intro {
   text-align: center;
   color: #3E2723;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   font-size: 1.15rem;
 }
 .historia-vino .timeline {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 1.875rem;
 }
 .historia-vino .timeline .timeline-item {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: 1.5rem;
   background: #f5e6d3;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
   box-shadow: 0 1px 4px rgba(60, 40, 20, 0.06);
 }
 .historia-vino .timeline .timeline-item .timeline-date {
-  min-width: 90px;
-  font-weight: bold;
+  min-width: 5.625rem;
+  font-weight: 700;
   color: #8b6239;
   font-size: 1.1rem;
-  margin-top: 12px;
+  margin-top: 0.75rem;
 }
 .historia-vino .timeline .timeline-item .timeline-content {
-  display: flex;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.25rem;
   align-items: flex-start;
 }
 .historia-vino .timeline .timeline-item .timeline-content img {
-  width: 80px;
-  min-height: 60px;
+  width: 5rem;
+  min-height: 3.75rem;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 2px solid #8b6239;
   box-shadow: 0 1px 4px rgba(60, 40, 20, 0.08);
 }
 .historia-vino .timeline .timeline-item .timeline-content h3 {
-  margin: 0 0 6px 0;
+  margin: 0 0 0.5rem 0;
   color: #4B3F2A;
   font-size: 1.1rem;
 }
@@ -148,30 +173,46 @@ h1 {
   justify-content: center;
   align-items: center;
   background: #3E2723;
-  gap: 40px;
-  padding: 30px 0;
-  border-top: solid 2px;
+  gap: 2.5rem;
+  padding: 1.875rem 0;
+  border-top: 2px solid #4B3F2A;
 }
 .Final-section .Final-quote {
   font-size: 1.4rem;
   font-style: italic;
   color: #fff;
   text-align: center;
-  max-width: 400px;
+  max-width: 25rem;
 }
 .Final-section .Final-image {
-  width: 220px;
+  width: 13.75rem;
   height: auto;
   display: block;
-  border: solid 2px;
+  border: 2px solid #fff;
 }
 
 .is-transparent {
   background-color: transparent;
   border-color: transparent;
-  color: transparent;
+  color: inherit;
 }
 
+@media (max-width: 800px) {
+  .historia-vino .timeline .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .historia-vino .timeline .timeline-item .timeline-date {
+    margin-top: 0;
+  }
+  .historia-vino .timeline .timeline-item .timeline-content {
+    justify-items: center;
+  }
+  .historia-vino .timeline .timeline-item .timeline-content p {
+    text-align: center;
+  }
+}
 @media (max-width: 425px) {
   .nav_header {
     flex-direction: row-reverse;
@@ -187,27 +228,24 @@ h1 {
   .btn-secondary {
     background-color: transparent;
     border-color: transparent;
-    color: transparent;
+    color: inherit;
   }
   .hidden {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    overflow: visible;
     display: block;
   }
   .container {
-    flex-direction: column;
     flex-direction: column-reverse;
   }
   .information {
     text-align: left;
-  }
-}
-@media (max-width: 800px) {
-  .historia-vino .timeline .timeline-item, .historia-vino .timeline .timeline-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .historia-vino .timeline .timeline-date {
-    margin-top: 0;
   }
 }
 footer {
@@ -219,8 +257,8 @@ footer .footer-social {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  padding: 24px 0;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
 }
 footer .footer-social img {
   width: 2.5em;

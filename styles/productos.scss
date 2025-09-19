@@ -1,4 +1,3 @@
-// Variables de color
 $color-bg: #D8C4B6;
 $color-cafe: #3E2723;
 $color-cafe-grad1: #6d4c2b;
@@ -8,6 +7,77 @@ $color-cafe-claro: #efe3d1;
 $color-blanco: #fff;
 $color-blanco2: #fffbe6;
 $color-shadow: rgba(0, 0, 0, 0.15);
+$shadow-card: rgba(0, 0, 0, 0.1);
+$shadow-card-soft: rgba(0, 0, 0, 0.07);
+$shadow-warm: rgba(60, 40, 20, 0.08);
+$shadow-warm-medium: rgba(60, 40, 20, 0.10);
+$shadow-warm-strong: rgba(60, 40, 20, 0.15);
+
+$color-text: $color-cafe-oscuro;
+$color-crema: #f5f5dc;
+$color-acento: #a67c52;
+$color-explora-bg: #6a2c0f;
+$color-explora-hover: #8b3e1a;
+$color-maridaje-card: #f8e7c7;
+
+// Variables de espaciado
+$space-xxs: 0.5rem;
+$space-xs: 0.75rem;
+$space-sm: 1rem;
+$space-md: 1.25rem;
+$space-lg: 1.5rem;
+$space-xl: 1.875rem;
+$space-xxl: 2rem;
+$space-xxxl: 2.5rem;
+$space-section: 3rem;
+
+// Variables de bordes
+$radius-sm: 0.5rem;
+$radius-md: 0.75rem;
+
+// Mixins
+@mixin btn($bg, $fg) {
+  display: inline-block;
+  padding: $space-sm $space-md;
+  border: 2px solid transparent;
+  border-radius: $radius-md;
+  background-color: $bg;
+  color: $fg;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+@mixin grid-auto($min: 220px, $gap: $space-md) {
+  display: flex;
+  gap: $gap;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@mixin transparent-control($text: inherit) {
+  background-color: transparent;
+  border-color: transparent;
+  color: $text;
+}
+
+%visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
 
 // Reset
 * {
@@ -15,16 +85,22 @@ $color-shadow: rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   padding: 0;
 }
-html, body {
+
+html,
+body {
   height: 100%;
   // min-height: 100vh; // Eliminado para evitar problemas de viewport
 }
+
 body {
   display: flex;
   flex-direction: column;
   // min-height: 100vh; // Eliminado para evitar problemas de viewport
   background-color: $color-bg; // Quitado !important
+  color: $color-text;
+  line-height: 1.5;
 }
+
 main {
   flex: 1 0 auto;
   background-color: $color-bg;
@@ -35,42 +111,65 @@ header {
   background-image: url(../Images/pexels-ionelceban-2581022.jpg);
   background-size: cover;
   background-position: center;
-  padding: 30px;
+  padding: $space-xl;
 }
+
 .hamburger {
   display: none;
 }
+
 .nav_header {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 1.1875rem;
 
-  .nav_links,
-  li a {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    color: #F5F5DC;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
   .nav_links {
     display: flex;
-    li a:hover {
-      color: #F5F5DC;
+    gap: $space-lg;
+    list-style: none;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $color-crema;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: $color-blanco;
     }
   }
 }
-ul {
-  gap: 25px;
+
+.dropdown {
+  .btn {
+    @include btn($color-cafe, $color-crema);
+    border-color: $color-cafe-grad2;
+    background-image: none;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: $color-acento;
+    color: $color-blanco;
+  }
 }
+
 .hidden {
-  display: none;
+  @extend %visually-hidden;
 }
+
 h1 {
-  color: white;
+  color: $color-blanco;
   text-align: center;
 }
 
@@ -78,6 +177,7 @@ h1 {
 h2 {
   text-align: center;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -86,78 +186,82 @@ h2 {
   margin: 2%;
   text-align: center;
 }
+
 .First-section {
-  margin-top: 20px;
-  border-bottom: solid 2px;
+  margin-top: $space-md;
+  border-bottom: 2px solid $color-cafe-oscuro;
 }
 
 // Segunda sección
 .Second-Section {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  border-bottom: solid 2px;
+  margin-top: $space-md;
+  border-bottom: 2px solid $color-cafe-oscuro;
 }
+
 .information-second-section {
   text-align: center;
+
   h2 {
-    margin-top: 20px;
+    margin-top: $space-md;
   }
 }
+
 .Section-content {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 24px;
-  margin-bottom: 20px;
+  gap: $space-lg;
+  margin-bottom: $space-md;
 }
-// Tarjetas decorativas con flex y altura automática
+
+// Tarjetas decorativas con grilla auto-ajustable
 .pilares {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  @include grid-auto(240px, $space-xxl);
+  justify-items: center;
   align-items: stretch;
 }
+
 .pilar {
-  flex: 1 1 250px;
-  max-width: 300px;
+  width: 100%;
+  max-width: 320px;
   background: $color-cafe-claro;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: $space-lg;
+  border-radius: $radius-md;
+  box-shadow: 0 2px 8px $shadow-card;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   min-height: 220px; // Altura mínima para consistencia, pero permite crecer
 }
+
 .btn-Regresa {
+  @include btn($color-cafe-claro, $color-text);
   display: block;
   width: 100%;
-  margin: 40px 0 0 0; // Espaciado superior para separar del contenido anterior
-  padding: 24px 0 24px 0;
-  background: $color-cafe-claro;
-  color: $color-cafe-oscuro;
+  margin: $space-xxxl 0 0;
+  padding: $space-lg 0;
   border-radius: 0;
   text-align: center;
-  font-weight: bold;
   font-size: 1.2rem;
-  box-shadow: 0 1px 4px rgba(60,40,20,0.08);
-  text-decoration: none;
+  box-shadow: 0 1px 4px $shadow-warm;
   border: none;
 
   &:hover {
-    background: #a67c52; // Nuevo color al pasar el cursor
+    background: $color-acento;
     color: $color-blanco;
   }
 }
+
 // Uvas sin altura fija, solo ancho y altura automática
 .second-grapes {
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: $space-md;
+  margin-top: $space-md;
   text-align: center;
 }
+
 .uva-merlot,
 .uva-syrah,
 .uva-cabernet,
@@ -175,42 +279,40 @@ h2 {
 .third-section {
   display: flex;
   flex-direction: column;
-  margin: 20px;
-}
-.information-third-section {
-  text-align: center;
-  margin-top: 20px;
+  margin: $space-md;
 }
 
-// Meridaje
+.information-third-section {
+  text-align: center;
+  margin-top: $space-md;
+}
+
+// Maridaje
 .meridaje {
-  border-top: solid 2px;
+  border-top: 2px solid $color-cafe-oscuro;
   background: $color-cafe-claro;
-  padding: 32px 0 24px 0;
+  padding: $space-xxl 0 $space-lg 0;
   text-align: center;
 
   h2 {
-    margin-top: 20px;
-    margin-bottom: 24px;
+    margin-top: $space-md;
+    margin-bottom: $space-lg;
   }
 
   .meridaje-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    @include grid-auto(220px, $space-lg);
     align-items: stretch;
-    margin-top: 16px;
+    justify-items: center;
+    margin-top: $space-sm;
   }
 
   .meridaje-card {
-    flex: 1 1 220px;
-    min-width: 200px;
-    max-width: 300px;
-    background: #f8e7c7; // <--- Nuevo color para las cartas de maridaje
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    max-width: 320px;
+    background: $color-maridaje-card;
+    padding: $space-lg;
+    border-radius: $radius-md;
+    box-shadow: 0 2px 8px $shadow-card-soft;
     text-align: center;
     min-height: 120px;
     display: flex;
@@ -220,7 +322,7 @@ h2 {
   }
 
   .meridaje-nota {
-    margin-top: 24px;
+    margin-top: $space-lg;
     font-size: 1rem;
     color: $color-cafe-oscuro;
   }
@@ -229,31 +331,28 @@ h2 {
 // Descubre más
 .explora {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: $space-section $space-sm;
   background: $color-cafe-claro;
 
   h2 {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: $space-sm;
   }
+
   .explora-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    gap: $space-lg;
+    margin-top: $space-lg;
 
     a {
-      text-decoration: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
-      background: #6a2c0f;
-      color: $color-blanco;
-      font-weight: bold;
-      transition: 0.3s;
+      @include btn($color-explora-bg, $color-blanco);
+      padding: $space-xs $space-lg;
+      border-radius: $radius-sm;
 
       &:hover {
+        background: $color-explora-hover;
         color: $color-blanco;
-        background: #8b3e1a;
       }
     }
   }
@@ -265,10 +364,11 @@ h2 {
   justify-content: center;
   align-items: center;
   background: $color-cafe;
-  gap: 40px;
-  padding: 30px 0;
-  border-top: solid 2px;
+  gap: $space-xxxl;
+  padding: $space-xl 0;
+  border-top: 2px solid $color-cafe-oscuro;
 }
+
 .Final-quote {
   font-size: 1.4rem;
   font-style: italic;
@@ -276,24 +376,23 @@ h2 {
   text-align: center;
   max-width: 400px;
 }
+
 .Final-image {
   width: 220px;
   height: auto;
   display: block;
-  border: solid 2px;
-  padding: 8px 0; // Usar padding en vez de height fijo
+  border: 2px solid $color-blanco;
+  padding: $space-xxs 0; // Usar padding en vez de height fijo
   line-height: 1.5;
 }
 
 // Variante para transparentar botones/inputs
 .is-transparent {
-  background-color: transparent;
-  border-color: transparent;
-  color: transparent;
+  @include transparent-control(transparent);
 }
 
 // Media Query
-@media (max-width:425px) {
+@media (max-width: 425px) {
   .nav_header {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -302,22 +401,33 @@ h2 {
       display: none;
     }
   }
+
   .hamburger {
     display: block;
     background-color: transparent;
   }
+
   .btn-secondary {
-    background-color: transparent;
-    border-color: transparent;
-    color: transparent;
+    @include transparent-control(transparent);
   }
+
   .hidden {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    overflow: visible;
     display: block;
   }
+
   .container {
     flex-direction: column;
     flex-direction: column-reverse;
   }
+
   .information {
     text-align: left;
   }
@@ -327,20 +437,20 @@ h2 {
 footer {
   background: linear-gradient(90deg, $color-cafe-grad1 0%, $color-cafe-grad2 100%);
   border-top: 3px solid $color-cafe-oscuro;
-  box-shadow: 0 -2px 8px rgba(60,40,20,0.10);
+  box-shadow: 0 -2px 8px $shadow-warm-medium;
 
   .footer-social {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    padding: 24px 0;
+    gap: $space-lg;
+    padding: $space-lg 0;
 
     img {
       width: 2.5em; // Usar unidades relativas
       height: auto; // Permitir que crezca con el contenido
       line-height: 1.5; // Mejor accesibilidad
-      filter: drop-shadow(0 2px 4px rgba(60,40,20,0.15));
+      filter: drop-shadow(0 2px 4px $shadow-warm-strong);
     }
   }
 }
